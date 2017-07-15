@@ -28,7 +28,7 @@ function getDataFromAPI(searchTerm, callback) {
 function renderResults(item) {
 	headline = item.headline.main;
 	console.log(headline);
-	headline = headline.replace(/’‘;'"/g, " ");
+	headline = headline.replace(/’‘;t'"/g, "d");
 	console.log(headline);
 	let checkForWords = headline.split(" ");
 	if (findExcluded(checkForWords)) {
