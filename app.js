@@ -1,11 +1,18 @@
 //banner
-$('.intro1').fadeOut(5000);
-$('.intro2').hide().fadeIn(3000).show(2000).fadeOut(2000);
-$('#searchForm').fadeIn(3000);
+//$('.intro2').hide().fadeIn(3000).show(2000).fadeOut(2000);
+//$('#searchForm').fadeIn(3000);
 
 let excluded = [];
 
-$()
+function findExcluded(headline) {
+	for (var i=0; i<headline.length; i++) {
+		for(var j=0; j<excluded.length; j++) {
+		 if (headline[i].toLowerCase() === excluded[j]) {
+		 	return true;
+ 		 }}
+	};
+	return false;
+};
 
 function getDataFromAPI(searchTerm, callback) {
 	const  NYT_SEARCH_URL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
@@ -13,17 +20,25 @@ function getDataFromAPI(searchTerm, callback) {
 		part: 'response',
 		'api-key': 'e7003c070aea44feb70e1298fd660497',
 		q: searchTerm,
-		per_page: 10
+		per_page: 20
   }
   $.getJSON(NYT_SEARCH_URL, query, callback);
 };
 
-
-function renderResults (item) {
-	return `
-		<div>
-			<a href="${item.web_url}" target="_blank"><h3>${item.headline.main}</h3></a>
-		</div>`
+function renderResults(item) {
+	headline = item.headline.main;
+	console.log(headline);
+	headline = headline.replace(/’‘;'"/g, " ");
+	console.log(headline);
+	let checkForWords = headline.split(" ");
+	if (findExcluded(checkForWords)) {
+		return 
+	} else {
+		return `
+			<div>
+				<a href="${item.web_url}" target="_blank"><h3>${item.headline.main}</h3></a>
+			</div>`
+	}
 };
 
 function displayNewYorkTimesData(data) {
@@ -44,15 +59,12 @@ function watchSubmit() {
 		event.preventDefault();
 		let word = $('#excludedInput').val();
 		$('#excludedInput').val("");
-		excluded.push(word);
+		excluded.push(word.toLowerCase());
 		$('#excluded').append(`<button class="square">${word}</button`);
 		$('.square').on('click', function(event) {
 			$(this).hide();
 		});
 	});
-
-	//change headline to array with strings
-	//compare array with word
 };
 
 $(watchSubmit);
