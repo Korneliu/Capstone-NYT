@@ -49,7 +49,7 @@ function getDataFromAPI(searchTerm, callback) {
 function renderResults(item) {
 	headline = item.headline.main;
 	console.log(headline);
-	headline = headline.replace(/’‘;t'"/g, "d");
+	headline = headline.replace(/[,.’‘'";:''-]/g, " ");
 	console.log(headline);
 	let checkForWords = headline.split(" ");
 	if (findExcluded(checkForWords)) {
@@ -57,7 +57,7 @@ function renderResults(item) {
 	} else {
 		return `
 			<div>
-				<a href="${item.web_url}" target="_blank"><h3>${item.headline.main}</h3></a>
+				<a href="${item.web_url}" target="_blank"><h3>${headline}</h3></a>
 			</div>`
 	}
 };

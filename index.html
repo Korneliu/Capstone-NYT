@@ -32,14 +32,16 @@
 	</header>
 	<div class="container">
 		<form id="searchForm">
-			<label for="searchInput">Search</label>
-			<input type="text" id="searchInput" placeholder="search for...">
-			<button type="submit">Submit</button>
+			<div class="form-group">
+				<label for="searchInput">Search</label>
+				<input class="form-control" type="text" id="searchInput" placeholder="search for...">
+			</div>
+			<button class="btn btn-primary" type="submit">Submit</button>
 		</form>
 		<form id="excludedForm">
 			<label for ="excludedInput">Excluded words</label>
 			<input type="text" id="excludedInput">
-			<button type="submit">Submit</button>
+			<button class="btn btn-primary" type="submit">Submit</button>
 		</form>
 		<div id="excluded">
 			<h3>Excluded words</h3>
