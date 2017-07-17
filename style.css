@@ -1,10 +1,41 @@
-.intro1, .intro2 {
+.banner h1 {
 	font-size: 40px;
+	margin: 0 auto;
+	text-align: center;
 }
-
+#introForm {
+	margin: 0 auto;
+	text-align: center;
+}
+.intro1, .intro2, .intro3 {
+	font-size: 60px;
+	text-align: center;
+	display: none;
+}
+.intro4 {
+	font-size: 70px;
+	text-align: center;
+	display: none;
+}
+.startForm {
+	display: none;
+	text-align: center;
+}
+.container {
+	display: none;
+}
 #searchForm {
+	display: none;
+	margin-top: 20px;
+}
+#excludedForm {
+	display: none;
+	margin-top: 20px;
 }
 	
 .square {
 	background-color: yellow;
+}
+.startForm {
+	display: none;
 }

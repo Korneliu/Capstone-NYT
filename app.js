@@ -1,6 +1,25 @@
 //banner
-//$('.intro2').hide().fadeIn(3000).show(2000).fadeOut(2000);
-//$('#searchForm').fadeIn(3000);
+$('.intro1').fadeIn(3000).show().fadeOut(3000);
+$('.intro2').fadeIn(5000).show().fadeOut(3000);
+$('.intro3').fadeIn(7000).show().fadeOut(3000);
+
+$('#introForm').submit (event => {
+	event.preventDefault();
+	$('.introQuestions').hide();
+	$('.intro4').show();
+	$('#introForm').hide();
+	$('.startForm').show();
+});
+
+$('.startForm').submit (event => {
+	event.preventDefault();
+	$('.banner').hide();
+	$('.container').fadeIn(1000);
+});
+
+$('#searchForm').fadeIn(3000);
+$('#excludedForm').fadeIn(3000);
+
 
 let excluded = [];
 
@@ -19,8 +38,10 @@ function getDataFromAPI(searchTerm, callback) {
 	const query = {						
 		part: 'response',
 		'api-key': 'e7003c070aea44feb70e1298fd660497',
-		q: searchTerm,
-		per_page: 20
+		q: searchTerm ,
+		'begin_date': 19890710,
+		'sort': "newest",
+		key_page: 20
   }
   $.getJSON(NYT_SEARCH_URL, query, callback);
 };
