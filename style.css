@@ -1,4 +1,4 @@
-.banner h1 {
+h1 {
 	font-size: 40px;
 	margin: 0 auto;
 	text-align: center;
@@ -8,20 +8,31 @@
 	text-align: center;
 }
 .intro1, .intro2, .intro3 {
-	font-size: 60px;
+	font-size: 50px;
 	text-align: center;
 	display: none;
+	padding-bottom: 30px;
 }
 .intro4 {
 	font-size: 70px;
 	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 60px;
 	display: none;
+}
+.btn {
+
+}
+.col-md-4 {
+	border-left: 1px solid black;
+	border-radius: 5px;
+	margin-bottom: 20px;
 }
 .startForm {
 	display: none;
 	text-align: center;
 }
-.container {
+.my-container {
 	display: none;
 }
 #searchForm {
@@ -31,8 +42,7 @@
 #excludedForm {
 	display: none;
 	margin-top: 20px;
-}
-	
+}	
 .square {
 	background-color: yellow;
 }

@@ -12,44 +12,49 @@
 	  crossorigin="anonymous">
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-	<header>
+<body class="container">
+	<h1>No more "bad" news</h1>
+	<header class="row">
 		<div class="banner">
-			<h1>No more "bad" news</h1>
+
 			<div class="introQuestions">
 				<div class="intro1">Tired of reading terrifying  news?</div>
 				<div class="intro2">Sad stories make you depressed?</div>
 				<div class="intro3">Don't want to read about world diseases?</div>
 			</div>
 			<form id="introForm">
-				<button type="submit">Continue</button>
+				<button class="btn btn-primary" type="submit">Continue</button>
 			</form>
 			<div class="intro4">You don't need to see all of that...</div>
 		  	<form class="startForm">
-					<button type="submit">Continue</button>
+					<button class="btn btn-primary" type="submit">Continue</button>
 				</form>
 		</div>
 	</header>
-	<div class="container">
-		<form id="searchForm">
+	<div class="my-container row">
+		<form class="form-inline" id="searchForm">
 			<div class="form-group">
 				<label for="searchInput">Search</label>
-				<input class="form-control" type="text" id="searchInput" placeholder="search for...">
+				<input class="form-control" type="text" id="searchInput" placeholder="search for..." required>
 			</div>
 			<button class="btn btn-primary" type="submit">Submit</button>
 		</form>
-		<form id="excludedForm">
-			<label for ="excludedInput">Excluded words</label>
-			<input type="text" id="excludedInput">
+		<form class="form-inline" id="excludedForm">
+			<div class="form-group">
+				<label for ="excludedInput">Excluded words</label>
+				<input class="form-control" type="text" id="excludedInput">
+			</div>
 			<button class="btn btn-primary" type="submit">Submit</button>
 		</form>
 		<div id="excluded">
 			<h3>Excluded words</h3>
 		</div>
 		<hr>
-		<div id="results">
-			<h3>Results</h3>
-		</div>
+		<h3>Results</h3>
+		<div class="row" id="results"></div>
+		<form class="nextPage">
+			<button class="btn btn-primary" type="submit">Next Page</button>
+		</form>
 	</div>
 
 <script src="app.js"></script>
