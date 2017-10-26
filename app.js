@@ -30,9 +30,10 @@ let searchTerm;
 function findExcluded(headline) {
 	for (var i=0; i<headline.length; i++) {
 		for(var j=0; j<excluded.length; j++) {
-		 if (headline[i].toLowerCase() === excluded[j]) {
-		 	return true;
- 		 }}
+		 	if (headline[i].toLowerCase() === excluded[j]) {
+		 		return true;
+ 		  }
+ 		}
 	};
 	return false;
 };
@@ -46,11 +47,9 @@ function getDataFromAPI(searchTerm, page, callback) {
 		begin_date: 19890710,
 		sort: "newest",
 		page: page,
-		};
-	console.log(query.page);
+	};
 
 	$.getJSON(NYT_SEARCH_URL, query, callback);
-	console.log(query.page);
 };
 
 $('.nextPage').submit(event => {
@@ -62,7 +61,6 @@ $('.nextPage').submit(event => {
 function renderResults(item) {
 	headline = item.headline.main;
 	headline = headline.replace(/[’‘'"'']/g, " ");
-	console.log(headline);
 	let checkForWords = headline.split(" ");
 	if (findExcluded(checkForWords)) {
 		return 
@@ -75,8 +73,15 @@ function renderResults(item) {
 };
 
 function displayNewYorkTimesData(data) {
-	console.log(data);
-	const results = data.response.docs.map((item, index) => renderResults(item));
+	console.log(data.response.docs);
+	let results;
+	if (data.response.docs.length > 0) {
+		results = data.response.docs.map((item, index) => renderResults(item));	
+	}
+	else {
+		results = "No results found";
+	}
+
   $('#results').html(results);
   $('.nextPage').show();
 };

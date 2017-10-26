@@ -1,62 +1,62 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>New York Times</title>
-	<script
-			  src="https://code.jquery.com/jquery-3.2.1.min.js"
-			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous"></script>
-  <link rel="stylesheet" 
-	  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-	  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" 
-	  crossorigin="anonymous">
-  <link href="style.css" rel="stylesheet" type="text/css">
-</head>
-<body class="container">
-	<h1>No more "bad" news</h1>
-	<header class="row">
-		<div class="banner">
-
-			<div class="introQuestions">
-				<div class="intro1">Tired of reading terrifying  news?</div>
-				<div class="intro2">Sad stories make you depressed?</div>
-				<div class="intro3">Don't want to read about world diseases?</div>
-			</div>
-			<form id="introForm">
-				<button class="btn btn-primary" type="submit">Continue</button>
-			</form>
-			<div class="intro4">You don't need to see all of that...</div>
-		  	<form class="startForm">
-					<button class="btn btn-primary" type="submit">Continue</button>
+<html lang='en'>
+	<head>
+		<title>New York Times</title>
+		<script
+				  src="https://code.jquery.com/jquery-3.2.1.min.js"
+				  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+				  crossorigin="anonymous"></script>
+	  <link rel="stylesheet" 
+		  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+		  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" 
+		  crossorigin="anonymous">
+	  <link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body class="container">
+		<h1>No more "bad" news</h1>
+		 <!-- intro headers -->
+		 <header>
+			<div class="banner">
+				<div class="introQuestions">
+					<div class="intro1">Tired of reading terrifying  news?</div>
+					<div class="intro2">Sad stories make you depressed?</div>
+					<div class="intro3">Don't want to read about world diseases?</div>
+				</div>
+			<!-- search page-->
+				<form id="introForm">
+					<button class="buttonContinue" type="submit">Continue</button>
 				</form>
-		</div>
-	</header>
-	<div class="my-container row">
-		<form class="form-inline" id="searchForm">
-			<div class="form-group">
-				<label for="searchInput">Search</label>
-				<input class="form-control" type="text" id="searchInput" placeholder="search for..." required>
+				<div class="intro4">You don't need to see all of that...</div>
+			  	<form class="startForm">
+						<button class="buttonContinue" type="submit">Continue</button>
+					</form>
 			</div>
-			<button class="btn btn-primary" type="submit">Submit</button>
-		</form>
-		<form class="form-inline" id="excludedForm">
-			<div class="form-group">
-				<label for ="excludedInput">Excluded words</label>
-				<input class="form-control" type="text" id="excludedInput">
+		</header>
+		<div class="my-container row">
+			<form class="form-inline" id="searchForm">
+				<div class="form-group">
+					<label for="searchInput">Search</label>
+					<input class="form-control" type="text" id="searchInput" placeholder="search for..." required>
+				</div>
+				<button class="buttonSubmit" type="submit">Submit</button>
+			</form>
+			<form class="form-inline" id="excludedForm">
+				<div class="form-group">
+					<label for ="excludedInput">Excluded words</label>
+					<input class="form-control" type="text" id="excludedInput">
+				</div>
+				<button class="buttonSubmit" type="submit">Submit</button>
+			</form>
+			<div id="excluded">
+				<h3>Excluded words</h3>
 			</div>
-			<button class="btn btn-primary" type="submit">Submit</button>
-		</form>
-		<div id="excluded">
-			<h3>Excluded words</h3>
+			<hr>
+			<h3>Results</h3>
+			<div class="row" id="results"></div>
+			<form class="nextPage">
+				<button class="btn btn-primary" type="submit">Next Page</button>
+			</form>
 		</div>
-		<hr>
-		<h3>Results</h3>
-		<div class="row" id="results"></div>
-		<form class="nextPage">
-			<button class="btn btn-primary" type="submit">Next Page</button>
-		</form>
-	</div>
-
-<script src="app.js"></script>
-</body>
+		<script src="app.js"></script>
+	</body>
 </html>
