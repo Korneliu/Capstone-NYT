@@ -6,10 +6,6 @@
 				  src="https://code.jquery.com/jquery-3.2.1.min.js"
 				  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 				  crossorigin="anonymous"></script>
-	  <link rel="stylesheet" 
-		  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-		  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" 
-		  crossorigin="anonymous">
 	  <link href="style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body class="container">
@@ -32,7 +28,7 @@
 					</form>
 			</div>
 		</header>
-		<div class="my-container row">
+		<div class="my-container">
 			<form class="form-inline" id="searchForm">
 				<div class="form-group">
 					<label for="searchInput">Search</label>
@@ -43,7 +39,7 @@
 			<form class="form-inline" id="excludedForm">
 				<div class="form-group">
 					<label for ="excludedInput">Excluded words</label>
-					<input class="form-control" type="text" id="excludedInput">
+					<input class="form-control" type="text" placeholder="type unwanted topics..." id="excludedInput">
 				</div>
 				<button class="buttonSubmit" type="submit">Submit</button>
 			</form>
@@ -51,12 +47,14 @@
 				<h3>Excluded words</h3>
 			</div>
 			<hr>
-			<h3>Results</h3>
-			<div class="row" id="results"></div>
-			<form class="nextPage">
-				<button class="btn btn-primary" type="submit">Next Page</button>
+			<div id="results">
+				<div class="column">
+					<h3>Results</h3>
+				</div>
+		  </div>
+					<form class="nextPage">
+					<button class="nextPage" type="submit">Next Page</button> 
 			</form>
-		</div>
 		<script src="app.js"></script>
 	</body>
 </html>

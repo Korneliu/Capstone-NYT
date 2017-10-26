@@ -66,7 +66,7 @@ function renderResults(item) {
 		return 
 	} else {
 		return `
-			<div class="col-md-4 col-xs-12 col-sm-6">
+			<div class="column">
 				<a href="${item.web_url}" target="_blank"><h3>${headline}</h3></a>
 			</div>`
 	}
