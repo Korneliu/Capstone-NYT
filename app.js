@@ -2,6 +2,7 @@
 $('.intro1').fadeIn(3000).show().fadeOut(3000);
 $('.intro2').fadeIn(5000).show().fadeOut(3000);
 $('.intro3').fadeIn(7000).show().fadeOut(3000);
+$('.mobileForm').fadeIn(1000);
 
 $('#introForm').submit (event => {
 	event.preventDefault();
@@ -12,16 +13,25 @@ $('#introForm').submit (event => {
 });
 
 $('.nextPage').hide();
+$('.previousPage').hide();
+$('#excluded').hide();
 
 $('.startForm').submit (event => {
 	event.preventDefault();
 	$('.banner').hide();
 	$('.my-container').fadeIn(1000);
 });
+$('.mobileForm').submit (event => {
+	event.preventDefault();
+	$('.mobileButtonContinue').hide();
+	$('.mobileHeader').hide();
+	$('.mobileContinue').hide();
+	$('.my-container').fadeIn(1000);
+});
+
 
 $('#searchForm').fadeIn(3000);
 $('#excludedForm').fadeIn(3000);
-
 
 let excluded = [];
 let page = 0;
@@ -52,11 +62,11 @@ function getDataFromAPI(searchTerm, page, callback) {
 	$.getJSON(NYT_SEARCH_URL, query, callback);
 };
 
-$('.nextPage').submit(event => {
+/*$('.nextPage').submit(event => {
 	 event.preventDefault();
 	 page ++;
 	 getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
-});
+});*/
 
 function renderResults(item) {
 	headline = item.headline.main;
@@ -81,9 +91,8 @@ function displayNewYorkTimesData(data) {
 	else {
 		results = "No results found";
 	}
-
   $('#results').html(results);
-  $('.nextPage').show();
+  $('.nextPage').show(); 
 };
 
 function watchSubmit() {
@@ -94,13 +103,19 @@ function watchSubmit() {
 		page = 0;
 		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
 	});
+
 	$('.nextPage').on('click', function(event) {
 		page++;
 		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
+		$('.previousPage').show();
 	});
+
 	$('.previousPage').on('click', function(event) {
 		page--;
 		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
+		if (page === 0) {
+			$('.previousPage').hide();
+		}
 	});
 	
 	$('#excludedForm').submit(event => {
@@ -109,6 +124,7 @@ function watchSubmit() {
 		$('#excludedInput').val("");
 		excluded.push(word.toLowerCase());
 		$('#excluded').append(`<button class="square">${word}</button`);
+		$('#excluded').show();
 		
 		});
 	

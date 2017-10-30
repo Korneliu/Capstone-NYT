@@ -41,6 +41,9 @@ h1 {
 	justify-content: space-between;
 	width: 40%;
 }
+.inputsForm {
+	padding-right: 5px;
+}
 .form-control {
 	flex-grow: 2;
 }
@@ -74,6 +77,9 @@ h1 {
 	width: 40%;
 	margin: 0 auto;
 }
+.form-control {
+	padding-left: 5px;
+}
 .square {
 	background-color: yellow;
 }
@@ -87,3 +93,51 @@ h1 {
 	width: 40%;
 	margin: 0 auto;
 }
+.nextPage {
+	cursor: pointer;
+	float: right;
+	margin-right: 20%;	
+}
+.previousPage {
+	cursor: pointer;
+}
+
+@media only screen and (min-width: 480px) {
+	.mobileHeader {
+		display: none;
+	}
+	.mobileContinue {
+		display: none;
+	}	
+	.mobileButtonContinue {
+		display: none;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.banner {
+		display: none;
+	}
+	.mobileContinue {
+		text-align: center;
+	}
+	.mobileBanner {
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		text-align: center;
+		position: absolute;
+		cursor: pointer;
+	}
+		.searchBoxes {
+		margin: 0 auto;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+	}
+		.column {
+		width: 100%;
+		margin: 0 auto;
+	}
+};

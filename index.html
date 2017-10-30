@@ -2,15 +2,16 @@
 <html lang='en'>
 	<head>
 		<title>New York Times</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
 		<script
 				  src="https://code.jquery.com/jquery-3.2.1.min.js"
 				  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-				  crossorigin="anonymous"></script>
-	  <link href="style.css" rel="stylesheet" type="text/css">
+				  crossorigin="anonymous"></script>  
 	</head>
 	<body class="container">
 		<h1>No more "bad" news</h1>
-		 <!-- intro headers -->
+		<h2 class="mobileHeader">Do you want to see only what you really want to see??</h2>
+		<h2 class="mobileContinue">Click continue</h2>
 		 <header>
 			<div class="banner">
 				<div class="introQuestions">
@@ -26,22 +27,27 @@
 			  	<form class="startForm">
 						<button class="buttonContinue" type="submit">Continue</button>
 					</form>
-			</div>
+				</div>
+				<div class="mobileBanner">
+					<form class="mobileForm">
+						<button class="mobileButtonContinue" type="submit">Continue</button>
+					</form>
+				</div>
 		</header>
 		<div class="my-container">
 			<div class="searchBoxes">
 				<form class="form-inline" id="searchForm">
 					<div class="form-group">
-						<label for="searchInput">Search</label>
+						<label for="searchInput" class="inputsForm">Search</label>
 						<input class="form-control" type="text" id="searchInput" placeholder="search for..." required>
 						<button class="buttonSubmit" type="submit">Submit</button>
 					</div>
 				</form>
 				<form class="form-inline" id="excludedForm">
 					<div class="form-group">
-						<label for ="excludedInput">Excluded words</label>
+						<label for ="excludedInput" class="inputsForm">Excluded words</label>
 						<input class="form-control" type="text" placeholder="type unwanted topics..." id="excludedInput">
-					<button class="buttonSubmit" type="submit">Submit</button>
+				    <button class="buttonSubmit" type="submit">Submit</button>
 					</div>
 				</form>
 				<div id="excluded">
@@ -54,10 +60,10 @@
 					<h3>Results</h3>
 				</div>
 		  </div>
-		  	<div class="nextPageSection">
-		  			<button class="previousPage" type="submit">Previous Page</button>
-						<button class="nextPage" type="submit">Next Page</button> 
-				</div>
+		  <div class="nextPageSection">
+		  		<button class="previousPage" type="submit">Previous Page</button>
+					<button class="nextPage" type="submit">Next Page</button> 
+			</div>
 		<script src="app.js"></script>
 	</body>
 </html>
