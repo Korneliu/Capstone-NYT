@@ -21,7 +21,9 @@ h1 {
 	display: none;
 }
 .buttonContinue {
-	top: 500px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 	text-align: center;
 	position: absolute;
 	cursor: pointer;
@@ -33,6 +35,24 @@ h1 {
 }
 .my-container {
 	display: none;
+}
+.form-group {
+	display: flex;
+	justify-content: space-between;
+	width: 40%;
+}
+.form-control {
+	flex-grow: 2;
+}
+.buttonSubmit {
+	cursor: pointer;
+}
+.searchBoxes {
+	margin: 0 auto;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 40%;
 }
 #searchForm {
 	display: none;
@@ -51,7 +71,7 @@ h1 {
 	align-items: center;
 }
 .column {
-	width: 33.3%;
+	width: 40%;
 	margin: 0 auto;
 }
 .square {
@@ -59,4 +79,11 @@ h1 {
 }
 .startForm {
 	display: none;
+}
+.nextPageSection {
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+	width: 40%;
+	margin: 0 auto;
 }

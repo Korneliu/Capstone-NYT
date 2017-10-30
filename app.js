@@ -94,17 +94,27 @@ function watchSubmit() {
 		page = 0;
 		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
 	});
-
+	$('.nextPage').on('click', function(event) {
+		page++;
+		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
+	});
+	$('.previousPage').on('click', function(event) {
+		page--;
+		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
+	});
+	
 	$('#excludedForm').submit(event => {
 		event.preventDefault();
 		let word = $('#excludedInput').val();
 		$('#excludedInput').val("");
 		excluded.push(word.toLowerCase());
 		$('#excluded').append(`<button class="square">${word}</button`);
-		$('.square').on('click', function(event) {
-			$(this).hide();
+		
 		});
-	});
+	
+	$('#excluded').on('click', '.square',function(event) {
+			$(this).hide();
+	});		
 };
 
 $(watchSubmit);

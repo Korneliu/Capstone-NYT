@@ -29,22 +29,24 @@
 			</div>
 		</header>
 		<div class="my-container">
-			<form class="form-inline" id="searchForm">
-				<div class="form-group">
-					<label for="searchInput">Search</label>
-					<input class="form-control" type="text" id="searchInput" placeholder="search for..." required>
+			<div class="searchBoxes">
+				<form class="form-inline" id="searchForm">
+					<div class="form-group">
+						<label for="searchInput">Search</label>
+						<input class="form-control" type="text" id="searchInput" placeholder="search for..." required>
+						<button class="buttonSubmit" type="submit">Submit</button>
+					</div>
+				</form>
+				<form class="form-inline" id="excludedForm">
+					<div class="form-group">
+						<label for ="excludedInput">Excluded words</label>
+						<input class="form-control" type="text" placeholder="type unwanted topics..." id="excludedInput">
+					<button class="buttonSubmit" type="submit">Submit</button>
+					</div>
+				</form>
+				<div id="excluded">
+					<h3>Excluded words</h3>
 				</div>
-				<button class="buttonSubmit" type="submit">Submit</button>
-			</form>
-			<form class="form-inline" id="excludedForm">
-				<div class="form-group">
-					<label for ="excludedInput">Excluded words</label>
-					<input class="form-control" type="text" placeholder="type unwanted topics..." id="excludedInput">
-				</div>
-				<button class="buttonSubmit" type="submit">Submit</button>
-			</form>
-			<div id="excluded">
-				<h3>Excluded words</h3>
 			</div>
 			<hr>
 			<div id="results">
@@ -52,9 +54,10 @@
 					<h3>Results</h3>
 				</div>
 		  </div>
-					<form class="nextPage">
-					<button class="nextPage" type="submit">Next Page</button> 
-			</form>
+		  	<div class="nextPageSection">
+		  			<button class="previousPage" type="submit">Previous Page</button>
+						<button class="nextPage" type="submit">Next Page</button> 
+				</div>
 		<script src="app.js"></script>
 	</body>
 </html>
