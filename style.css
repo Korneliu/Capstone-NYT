@@ -101,7 +101,6 @@ h1 {
 .previousPage {
 	cursor: pointer;
 }
-
 @media only screen and (min-width: 480px) {
 	.mobileHeader {
 		display: none;
@@ -128,7 +127,7 @@ h1 {
 		position: absolute;
 		cursor: pointer;
 	}
-		.searchBoxes {
+	.searchBoxes {
 		margin: 0 auto;
 		width: 100%;
 		display: flex;
@@ -136,8 +135,12 @@ h1 {
 		justify-content: center;
 		width: 100%;
 	}
-		.column {
+	.column {
 		width: 100%;
 		margin: 0 auto;
 	}
+	.previousPage {
+		margin-right: 20px;
+	}
+	
 };
