@@ -31,8 +31,9 @@ h1 {
 	position: absolute;
 	cursor: pointer;
 	background-color: #AA8439;
-	color: white;
+	color: #ffffff;
 	padding: 5px;
+	border: none;
 }
 
 .startForm {
@@ -46,11 +47,12 @@ h1 {
 	display: flex;
 	justify-content: space-between;
 	width: 40%;
+	font-size: 1.2em;
+	color: #603D08;
+	font-weight: 800;
 }
 .inputsForm {
 	padding-right: 5px;
-	color: #170F00;
-	font-size: 1em;
 }
 .form-control {
 	flex-grow: 2;
@@ -58,7 +60,8 @@ h1 {
 .buttonSubmit {
 	cursor: pointer;
 	background-color: #AA8439;
-	color: white;
+	color: #ffffff;
+	border: none;
 }
 .searchBoxes {
 	margin: 0 auto;
@@ -87,7 +90,7 @@ h1 {
 .column {
 	width: 40%;
 	margin: 5px auto;
-	border-radius: 2px;
+	border-radius: 5px;
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
 	background-color: #FFF1D6;
 }
@@ -101,7 +104,7 @@ h1 {
 	color: #170F00;
 }
 a:hover {
-	color: #AA8439;
+	text-decoration: underline;
 }
 .printDate {
 	font-size: 1.2em;
@@ -125,9 +128,15 @@ a:hover {
 .nextPage {
 	cursor: pointer;
 	margin-left: 40%;
+	background-color: #AA8439; 
+	color: #ffffff;
+	border:none;
 }
 .previousPage {
 	cursor: pointer;
+	background-color: #AA8439;
+	color: #ffffff;
+	border: none;
 }
 @media only screen and (min-width: 480px) {
 	.mobileHeader {
