@@ -186,6 +186,10 @@ a:hover {
 		box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
 		background-color: #FFF1D6;
 	}
+	.column:active {
+		transform: scale(1.02, 1.01);
+  	transition: transform 0.3s linear;
+	}
 	.previousPage {
 		margin-right: 20px;
 	}	
