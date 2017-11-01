@@ -183,16 +183,23 @@ a:hover {
 		background-color: #FFF1D6;
 	}
 	.column:active {
-		transform: scale(1.02, 1.01);
-  	transition: transform 0.3s linear;
+		transform: scale(1.01, 1.01);
+  	transition: transform 0.1s linear;
 	}
 	.previousPage {
 		margin-right: 20px;
 	}	
+	.mobileForm {
+		margin: 0 auto;
+	}
 	.mobileButtonContinue {
 		background-color: #AA8439;
 		color: #ffffff;
 		padding: 5px;
 		border: none;
+	}
+	.mobileButtonContinue:active {
+		transform: scale(1.01, 1.01);
+  	transition: transform 0.1s linear;	
 	}
 }
