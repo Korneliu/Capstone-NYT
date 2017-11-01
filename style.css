@@ -107,7 +107,7 @@ a:hover {
 	text-decoration: underline;
 }
 .printDate {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	color: #AA8439; 
 	font-weight: 800;
 }
@@ -139,21 +139,16 @@ a:hover {
 	border: none;
 }
 @media only screen and (min-width: 480px) {
-	.mobileHeader {
-		display: none;
-	}
-	.mobileContinue {
-		display: none;
-	}	
-	.mobileButtonContinue {
-		display: none;
-	}
+	.mobileHeader, .mobileContinue, .mobileButtonContinue,
 	.mobileBanner {
 		display: none;
 	}
 }
 @media only screen and (max-width: 480px) {
 	.banner {
+		display: none;
+	}
+	.buttonContinue {
 		display: none;
 	}
 	.introForm {
@@ -180,7 +175,6 @@ a:hover {
 	}
 	.column {
 		width: 100%;
-		margin: 0 auto;
 		margin: 5px auto;
 		border-radius: 5px;
 		box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
@@ -194,7 +188,6 @@ a:hover {
 		margin-right: 20px;
 	}	
 	.mobileButtonContinue {
-		cursor: pointer;
 		background-color: #AA8439;
 		color: #ffffff;
 		padding: 5px;
