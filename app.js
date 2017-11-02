@@ -105,7 +105,7 @@ function displayNewYorkTimesData(data) {
 };
 
 function watchSubmit() {
-	$('#searchForm').submit(event => {
+	$('#searchForm').submit (event => {
 		event.preventDefault();
 		searchTerm = $('#searchInput').val();
 		$('#searchInput').val("");
@@ -117,19 +117,17 @@ function watchSubmit() {
 		page++;
 		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
 		$('.previousPage').show();
-		showPrevious();
 	});
 
 	$('.previousPage').on('click', function(event) {
 		page--;
-		
 		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
 		if (page === 0) {
 			$('.previousPage').hide();
 		}
 	});
 	
-	$('#excludedForm').submit(event => {
+	$('#excludedForm').submit (event => {
 		event.preventDefault();
 		let word = $('#excludedInput').val();
 		$('#excludedInput').val("");
@@ -138,7 +136,7 @@ function watchSubmit() {
 		$('#excluded').show();
 	});
 	
-	$('#excluded').on('click', '.square',function(event) {
+	$('#excluded').on('click', '.square', function(event) {
 			$(this).hide();
 	});		
 };
