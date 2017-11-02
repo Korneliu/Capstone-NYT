@@ -145,6 +145,9 @@ a:hover {
 	}
 }
 @media only screen and (max-width: 480px) {
+	.searchBoxes h1 {
+		display: none;
+	}
 	.banner {
 		display: none;
 	}
