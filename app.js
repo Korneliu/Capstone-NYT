@@ -1,11 +1,4 @@
-/*function showPrevious() {
-	$('.previousPage').show();
-	$('nextPageSection').css({"justify-content":"space-between"});
-}
 
-function hidePrevious() {
-	$('nextPageSection').css({"justify-content":"flex-end"});
-}*/
 
 			//banner section
 $('.intro1').fadeIn(3000).show().fadeOut(3000);
@@ -45,6 +38,7 @@ $('#excludedForm').fadeIn(3000);
 let excluded = [];
 let page = 0;
 let searchTerm;
+let data = [];
 
 function findExcluded(headline) {
 	for (var i=0; i<headline.length; i++) {
@@ -67,14 +61,11 @@ function getDataFromAPI(searchTerm, page, callback) {
 		sort: "newest",
 		page: page,
 	};
-	$.getJSON(NYT_SEARCH_URL, query, callback);
+	$.getJSON(NYT_SEARCH_URL, query, serverResults => {
+		data = serverResults.response.docs;
+		callback(data);
+	})
 };
-
-/*$('.nextPage').submit(event => {
-	 event.preventDefault();
-	 page ++;
-	 getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
-});*/
 
 function renderResults(item) {
 	headline = item.headline.main;
@@ -84,18 +75,27 @@ function renderResults(item) {
 		return 
 	} else {
 		return `
-			<div class="column">
-				<a href="${item.web_url}" target="_blank"><h3>${headline}</h3></a>
-				<div class="printDate">Date of publication: ${item.pub_date}</div> 
-			</div>`
+		<div class="column">
+			<a href="${item.web_url}" target="_blank"><h3>${headline}</h3>
+			<div class="printDate">Date of publication: ${moment(item.pub_date).format("MMM Do YY")}</div></a>
+		</div>`
 	}
 };
+/*	<div class="column">
+			<a href="${item.web_url}" target="_blank"><h3>${headline}</h3></a>
+			<div class="printDate">Date of publication: ${moment(item.pub_date).format("MMM Do YY")}</div> 
+		</div>`*/
+
+$('.column').click(function() {
+  window.location = $(this).find("a").attr("href"); 
+  return false;
+});
 
 function displayNewYorkTimesData(data) {
-	console.log(data.response.docs);
+	console.log(data);
 	let results;
-	if (data.response.docs.length > 0) {
-		results = data.response.docs.map((item, index) => renderResults(item));	
+	if (data.length > 0) {
+		results = data.map((item, index) => renderResults(item));	
 	}
 	else {
 		results = "No results found";
@@ -103,6 +103,16 @@ function displayNewYorkTimesData(data) {
   $('#results').html(results);
   $('.nextPage').show(); 
 };
+
+function showPrevious() {
+	$('.previousPage').show();
+	$('.nextPageSection').css({"justify-content":"space-between"});
+}
+
+function hidePrevious() {
+	$('.previousPage').hide();
+	$('.nextPageSection').css({"justify-content":"flex-end"});
+}
 
 function watchSubmit() {
 	$('#searchForm').submit (event => {
@@ -112,18 +122,18 @@ function watchSubmit() {
 		page = 0;
 		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
 	});
-
+	
 	$('.nextPage').on('click', function(event) {
 		page++;
 		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
-		$('.previousPage').show();
+		showPrevious();
 	});
 
 	$('.previousPage').on('click', function(event) {
 		page--;
 		getDataFromAPI(searchTerm, page, displayNewYorkTimesData);
 		if (page === 0) {
-			$('.previousPage').hide();
+			hidePrevious();
 		}
 	});
 	
@@ -134,6 +144,7 @@ function watchSubmit() {
 		excluded.push(word.toLowerCase());
 		$('#excluded').append(`<button class="square">${word}</button`);
 		$('#excluded').show();
+		displayNewYorkTimesData(data);
 	});
 	
 	$('#excluded').on('click', '.square', function(event) {
