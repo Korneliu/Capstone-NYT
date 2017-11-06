@@ -11,12 +11,21 @@
 	</head>
 	<body class="container">
 		<div class="mobileBanner">
-		<h1>No more "bad" news !!!</h1>
-		<h2 class="mobileHeader">Do you want to see only what you really want to see??</h2>
-		<h2 class="mobileContinue">Click continue</h2>
-		<form class="mobileForm">
-			<button class="mobileButtonContinue" type="submit">Continue</button>
-		</form>
+			<h1>No more "bad" news !!!</h1>
+			<div class="mobileHeader">
+				<h2>Do you want to see only what you really want to see??</h2>
+				<h3>Step 1</h3>
+				<p>In a "Search for" box type a keyword. A single word which describes what topics are 
+					interested to read about</p>
+				<h3>Step 2</h3>
+				<p>In "Excluded words" box type a single word which describes topics which 
+					you don't want to read about. We'll remove all headers with that word from 
+					results list</p>
+				<h2 class="mobileContinue">Click continue</h2>
+				<form class="mobileForm">
+					<button class="mobileButtonContinue" type="submit">Continue</button>
+				</form>
+			</div>
 		</div>
 		 <header>
 			<div class="banner">
@@ -40,9 +49,13 @@
 						</form>
 			</div>
 				<div class="intro5">
-					<h2>In a search box type a keyword, after submit you'll see list of archive articles</h2>
-					<img src="NYT1.jpg">
-					<h2>In excluded  box type keyword</h2>
+					<h2>Step 1</h2>
+					<p>In a "Search for" box type a keyword. A single word which describes what topics are 
+					interested to read about</p>
+					<h2>Step 2</h2>
+					<p>In "Excluded words" box type a single word which describes topics which 
+						you don't want to read about. We'll remove all headers with that word from 
+					  results list</p>
 					<form class="startForm">
 						<button class="buttonContinue" type="submit">Continue</button>
 					</form>
@@ -54,8 +67,8 @@
 				<h1>No more "bad" news !!!</h1>
 				<form class="form-inline" id="searchForm">
 					<div class="form-group">
-						<label for="searchInput" class="inputsForm">Search</label>
-						<input class="form-control" type="text" id="searchInput" placeholder="search for..." required>
+						<label for="searchInput" class="inputsForm">Search for:</label>
+						<input class="form-control" type="text" id="searchInput" placeholder="type what you want to read about" required>
 						<button class="buttonSubmit" type="submit">Submit</button>
 					</div>
 				</form>
@@ -69,7 +82,7 @@
 				<h3>Excluded words</h3>
 				<div id="excluded">
 					<div class="excludedExplain">
-						<p>&#9664 You will not see articles with these keywords in your results</p>
+						<p>&#9664 You will not see headers with these keywords</p>
 					</div>
 				</div>
 			</div>

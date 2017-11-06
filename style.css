@@ -31,6 +31,11 @@ h1 {
 	width: 40%;
 	margin: 0 auto;
 }
+.intro5 p {
+	color: #603D08;
+	font-size: 1.2em;
+	font-weight: 600;
+}
 .buttonContinue {
 	top: 60%;
 	left: 50%;
@@ -198,6 +203,9 @@ h1 {
 		font-size: 3.5em;
 		margin-top: 5px;
 	}
+	.excludedExplain p {
+		font-size: 0.7em;
+	}
 	.searchBoxes {
 		margin: 0 auto;
 		width: 100%;
@@ -220,7 +228,13 @@ h1 {
 	.previousPage {
 		margin-right: 20px;
 	}	
+	.mobileHeader p {
+		color: #603D08;
+		font-weight: 600;
+	}
 	.mobileForm {
+		display: flex;
+		align-items: center;
 		margin: 0 auto;
 	}
 	.mobileButtonContinue {
@@ -228,5 +242,6 @@ h1 {
 		color: #ffffff;
 		padding: 5px;
 		border: none;
+		margin: 0 auto;
 	}
 }
