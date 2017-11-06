@@ -4,7 +4,9 @@
 $('.intro1').fadeIn(3000).show().fadeOut(3000);
 $('.intro2').fadeIn(5000).show().fadeOut(3000);
 $('.intro3').fadeIn(7000).show().fadeOut(3000);
+$('.intro5').hide();
 $('.mobileForm').fadeIn(1000);
+$('.buttonExpl').hide();
 
 $('#introForm').submit (event => {
 	event.preventDefault();
@@ -12,16 +14,29 @@ $('#introForm').submit (event => {
 	$('.intro4').show();
 	$('#introForm').hide();
 	$('.startForm').show();
+	$('.buttonContinue').hide();
+	$('.buttonExpl').show();
 });
 
 $('.nextPage').hide();
 $('.previousPage').hide();
 $('#excluded').hide();
+$('.excludedExplain').hide();
+
+$('.startExpl').submit (event => {
+	event.preventDefault();
+	$('.intro4').hide();
+	$('.intro5').show();
+	$('.buttonExpl').hide();
+	$('.buttonContinue').show();
+})
 
 $('.startForm').submit (event => {
 	event.preventDefault();
 	$('.banner').hide();
 	$('.my-container').fadeIn(1000);
+	$('.buttonContinue').hide();
+	$('.intro5').hide();
 });
 
 $('.mobileForm').submit (event => {
@@ -81,10 +96,6 @@ function renderResults(item) {
 		</div>`
 	}
 };
-/*	<div class="column">
-			<a href="${item.web_url}" target="_blank"><h3>${headline}</h3></a>
-			<div class="printDate">Date of publication: ${moment(item.pub_date).format("MMM Do YY")}</div> 
-		</div>`*/
 
 $('.column').click(function() {
   window.location = $(this).find("a").attr("href"); 
@@ -144,6 +155,8 @@ function watchSubmit() {
 		excluded.push(word.toLowerCase());
 		$('#excluded').append(`<button class="square">${word}</button`);
 		$('#excluded').show();
+		$('.excludedExplain').show();
+
 		displayNewYorkTimesData(data);
 	});
 	
